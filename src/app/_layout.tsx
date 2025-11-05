@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
+import React from "react";
 import "react-native-reanimated";
+import AppProvider from "../components/providers";
 import "../global.css";
 
 export const unstable_settings = {
@@ -9,7 +10,7 @@ export const unstable_settings = {
 
 export default function RootLayout() {
   return (
-    <>
+    <AppProvider>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen
@@ -17,7 +18,6 @@ export default function RootLayout() {
           options={{ presentation: "modal", title: "Modal" }}
         />
       </Stack>
-      <StatusBar style="auto" />
-    </>
+    </AppProvider>
   );
 }
