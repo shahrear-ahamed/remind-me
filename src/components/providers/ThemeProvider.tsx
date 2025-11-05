@@ -9,7 +9,11 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <StatusBar style={theme === "dark" ? "light" : "dark"} />
+      <StatusBar
+        style={theme === "dark" ? "light" : "dark"}
+        translucent
+        backgroundColor="transparent"
+      />
       <View style={[themes[theme], { flex: 1 }]} className="bg-background">
         {children}
       </View>
